@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const authRoutes = require("./routes/authRoutes");
+const taskRoutes = require("./routes/taskRoutes");
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ mongoose
 
 // Routes
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/task", taskRoutes);
 
 app.get("/", (req, res) => {
   res.send("API running...");
